@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import { AiOutlineSearch } from "react-icons/ai";
+import { useRouter } from "next/router"
+import SearchField from './SearchField';
 
 const Hero = () => {
 
@@ -17,16 +18,10 @@ const Hero = () => {
     return (
         <div className={styling}>
             <div className="mb-8 text-left w-full md:w-4/5 lg:w-1/2 mx-auto">
-                <h1 className='text-white font-bold tracking-wide text-4xl'>The best free stock photos</h1>
-                <h1 className='text-white font-bold tracking-wide text-4xl'>shared by talented creators.</h1>
+                <h1 className='text-white font-bold tracking-wide text-4xl lg:text-5xl'>The best free stock photos</h1>
+                <h1 className='text-white font-bold tracking-wide text-4xl lg:text-5xl'>shared by talented creators.</h1>
             </div>
-            <form className="w-full md:w-4/5 lg:w-1/2 mx-auto text-left relative">
-                <input type="text" name="searchQuery" required
-                className="block w-full bg-bexash rounded-lg py-4 px-4 focus:outline-none placeholder-gray-600"
-                placeholder="Search for free photos"
-                />
-                <AiOutlineSearch className='h-6 w-6 absolute top-4 right-7 text-gray-600' />
-            </form>
+            <SearchField />
         </div>
     )
 }
