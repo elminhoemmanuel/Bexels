@@ -20,13 +20,16 @@ function MyApp({ Component, pageProps }) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         /> 
+        <meta property="og:image" content="../public/images/preview.png" />
       </Head>
       
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
+          <div className='2xl:max-w-screen-2xl 2xl:mx-auto'>
           <Layout>
             <Component {...pageProps} />
           </Layout>
+          </div>
         </PersistGate>
       </Provider>
       
